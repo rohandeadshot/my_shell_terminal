@@ -1,6 +1,13 @@
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.mshl.util.Evaluator;
+
 public class Main {
+	
+	private static final Logger logger = LoggerFactory.getLogger(Main.class);
 	
 	private static Integer exitStatus=0;
 	
@@ -16,7 +23,17 @@ public class Main {
 				exitStatus = Integer.parseInt(values[1]);
 				break;
 			}
+			
+			try {
+				Evaluator.eval(command);
+			} catch (Exception e) {
+				logger.error(e.getMessage());
+			}
+			
 			System.out.println(command + ": command not found");
 		}
+		
+		scanner.close();
 	}
+	
 }
