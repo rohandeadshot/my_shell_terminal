@@ -29,8 +29,6 @@ public class Main {
 			} catch (Exception e) {
 				logger.error(e.getMessage());
 			}
-			
-			System.out.println(command + ": command not found");
 		}
 		
 		scanner.close();

@@ -14,8 +14,6 @@ public class Evaluator {
 	
 	public static void eval(String input) {
 		
-		System.out.print("$ ");
-		
 		ArrayList<String> args = new ArrayList<>(Arrays.stream(input.strip().split(" ")).collect(Collectors.toList()));
 		
 		String command = args.removeFirst().toLowerCase();
@@ -28,6 +26,8 @@ public class Evaluator {
 			System.out.println(outLine);
 			return;
 		}
+		
+		System.out.println(command + ": command not found");
 		
 	}
 
